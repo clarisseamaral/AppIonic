@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title color="tertiary">Incluir venda</ion-title>
+        <ion-buttons slot="start" (click)="voltar()">
+            <ion-button color="tertiary">
+                <ion-icon name="arrow-back"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-card class="welcome-card" (click)="abrirCamera()">
+        <ion-card-content style="align-items: center">
+            <ion-img [src]="venda.img"></ion-img>
+        </ion-card-content>
+    </ion-card>
+    <ion-item>
+        <ion-label position="floating">Cliente</ion-label>
+        <ion-input type="text" [(ngModel)]="venda.cliente" #cliente name="cliente"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Descrição</ion-label>
+        <ion-input type="text-area" [(ngModel)]="venda.descricao" #descricao name="descricao"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Valor</ion-label>
+        <ion-input type="number" [(ngModel)]="venda.valor" #valor name="valor"></ion-input>
+    </ion-item>
+
+    <br/> <br/> <br/>
+    <p>
+        <ion-button (click)="voltar()" color="tertiary" expand="block">Cancelar</ion-button>
+    </p>
+    <ion-button color="tertiary" expand="block" (click)="cadastrar()">
+        Salvar
+    </ion-button>
+</ion-content>

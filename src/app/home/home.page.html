@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title text-center color="tertiary">Vendas</ion-title>
+        <ion-buttons slot="end" (click)="cadastrarVenda()">
+            <ion-button color="tertiary">
+                <ion-icon name="add"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item *ngFor="let venda of vendas">
+            <ion-avatar slot="start">
+                <img src={{venda.img}}>
+            </ion-avatar>
+            <ion-label>
+                <h3>{{venda.cliente}}</h3>
+                <p>{{venda.descricao}}</p>
+                <p>R${{venda.valor}}</p>
+            </ion-label>
+        </ion-item>
+    </ion-list>
+</ion-content>
